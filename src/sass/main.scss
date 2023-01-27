@@ -1,0 +1,286 @@
+@import 'block/font';
+@import 'block/let';
+@import 'block/reset';
+@import 'block/global';
+//Header
+.header {
+    width: 100%;
+    background-color: #fff;
+}
+.nav {
+    padding: 23px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu {
+    display: flex;
+    gap: 0 32px;
+    &__link {
+        @extend %Montserrat-SemiBold;
+        font-size: 14px;
+        line-height: 120%;
+        &_airplane {
+            padding-left: 28px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 24px;
+                height: 20px;
+                background-image: url(../img/airplane.svg);
+            }
+        }
+        &_hotel {
+            padding-left: 28px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 22px;
+                height: 18px;
+                background-image: url(../img/hotel.svg);
+            }
+        }
+        &_sign {
+            padding: 15px 24px;
+            background-color: #112211;
+            color: #fff;
+            border-radius: 8px;
+        }
+    }
+}
+.logo__img {
+    position: relative;
+    z-index: 5;
+}
+//Burger menu
+.menu-mobile,
+.menu-btn {
+    display: none;
+}
+@media(max-width: 610px) {
+    .header {
+        position: fixed;
+    }
+    .nav {
+        padding: 12px 0;
+    }
+    .menu {
+        display: none;
+        &__link {
+            font-size: 24px;
+            &_airplane::before {
+                top: 4px;
+            }
+            &_hotel::before {
+                top: 6px;
+            }
+        }
+    }
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px 0;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba( 128, 125, 204, 0.9);
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+    .menu-mobile._active {
+        left: 0;
+    }
+
+    .menu-mobile::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 65px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    .menu-btn {
+        display: block;
+        position: relative;
+        z-index: 5;
+        width: 30px;
+        height: 18px;
+        background-color: transparent;
+        border: none;
+    }
+    .menu-btn span,
+    .menu-btn::before,
+    .menu-btn::after {
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        transition: all 0.3s ease 0s;
+        background-color: black;
+    }
+    .menu-btn::before,
+    .menu-btn::after {
+        content: "";
+    }
+    .menu-btn::before {
+        top: 0;
+    }
+    .menu-btn::after {
+        bottom: 0;
+    }
+    .menu-btn span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .menu-btn._active span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .menu-btn._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    .menu-btn._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+    }
+}
+//Footer
+.footer {
+    padding-top: 218px;
+    padding-bottom: 64px;
+    width: 100%;
+    background-color: #8DD3BB;
+    position: relative;
+    &__box {
+        max-width: 1232px;
+        width: 100%;
+        padding: 0 24px;
+        background-color: #CDEAE1;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: -154px;
+    }
+    &__mail {
+        padding: 24px 0;
+    }
+    &__titel {
+        max-width: 350px;
+        margin-bottom: 24px;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 44px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__subtitel {
+        margin-bottom: 8px;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 20px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.8;
+    }
+    &__text {
+        margin-bottom: 16px;
+        @extend %Montserrat-Medium;
+        font-size: 16px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.7;
+    }
+    &__form {
+        display: flex;
+        gap: 0 16px;
+    }
+    &__input {
+        padding: 18px 16px;
+        max-width: 473px;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        @extend %Montserrat-Regular;
+        font-size: 16px;
+        line-height: 120%;
+        color: #1C1B1F;
+        &::placeholder {
+            @extend %Montserrat-Regular;
+            font-size: 16px;
+            line-height: 120%;
+            color: #1C1B1F;
+        }
+    }
+    &__button {
+        padding: 19px 16px;
+        background-color: #112211;
+        border-radius: 4px;
+        @extend %Montserrat-SemiBold;
+        font-size: 14px;
+        line-height: 120%;
+        color: #fff;
+        cursor: pointer;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__social {
+        margin-top: 24px;
+        display: flex;
+        gap: 0 12px;
+    }
+    &__social-link {
+        transition: 0.4s;
+        &:hover {
+            transform: rotateZ(-45deg);
+        }
+    }
+    &__nav {
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 0 24px;
+    }
+    &__nav-titel {
+        margin-bottom: 16px;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 16px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__item {
+        margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.7;
+        transition: 0.3s;
+        &:hover {
+            color: #1b0c03;
+            opacity: 1;
+        }
+    }
+}
