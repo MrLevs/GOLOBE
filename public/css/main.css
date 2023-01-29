@@ -46,46 +46,83 @@
   src: local("TradeGothicLTStd-BoldExt"), url("../font/TradeGothicLTStd-BoldExt.eot") format("eot"), url("../font/TradeGothicLTStd-BoldExt.woff") format("woff"), url("../font/TradeGothicLTStd-BoldExt.woff2") format("woff2");
 }
 
-.footer__link,
-.footer__text {
+.search__input-code::-webkit-input-placeholder {
   font-family: "Montserrat-Medium";
   font-style: normal;
   font-weight: 500;
 }
 
-.footer__input::-webkit-input-placeholder {
+.search__input-code::-moz-placeholder {
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.search__input-code:-ms-input-placeholder {
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.search__input-code::-ms-input-placeholder {
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.footer__link,
+.footer__text,
+.search__btn,
+.search__input-code::placeholder,
+.search__input-code {
+  font-family: "Montserrat-Medium";
+  font-style: normal;
+  font-weight: 500;
+}
+
+.footer__input::-webkit-input-placeholder,
+.search__input::-webkit-input-placeholder {
   font-family: "Montserrat-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.footer__input::-moz-placeholder {
+.footer__input::-moz-placeholder,
+.search__input::-moz-placeholder {
   font-family: "Montserrat-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.footer__input:-ms-input-placeholder {
+.footer__input:-ms-input-placeholder,
+.search__input:-ms-input-placeholder {
   font-family: "Montserrat-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.footer__input::-ms-input-placeholder {
+.footer__input::-ms-input-placeholder,
+.search__input::-ms-input-placeholder {
   font-family: "Montserrat-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
 .footer__input::placeholder,
-.footer__input {
+.footer__input,
+.search__input::placeholder,
+.search__input,
+.search__legend {
   font-family: "Montserrat-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
 .footer__button,
-.menu__link {
+.intro__btn,
+.intro__subtitel,
+.menu__link,
+.search__titel {
   font-family: "Montserrat-SemiBold";
   font-style: normal;
   font-weight: 600;
@@ -93,7 +130,9 @@
 
 .footer__nav-titel,
 .footer__subtitel,
-.footer__titel {
+.footer__titel,
+.intro__titel,
+.intro__suptitel {
   font-family: "TradeGothicLTStd-BoldExt";
   font-style: normal;
   font-weight: 700;
@@ -256,9 +295,167 @@ body {
   padding: 0 15px;
 }
 
+.search {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.search__titel {
+  font-size: 20px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__info {
+  margin: 32px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.search__fieldset {
+  max-width: 324px;
+  width: 100%;
+  padding: 0 5px 5px 5px;
+  border: 1px solid #79747E;
+  border-radius: 4px;
+}
+
+.search__fieldset_lite {
+  max-width: 140px;
+  width: 100%;
+}
+
+.search__legend {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__input::-moz-placeholder {
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__input::-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__input::placeholder {
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.search__input-code {
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__input-code::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__input-code::-moz-placeholder {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__input-code:-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__input-code::-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__input-code::placeholder {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.search__btn {
+  background: #8DD3BB;
+  padding: 16px 16px 16px 34px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  cursor: pointer;
+  position: relative;
+}
+
+.search__btn::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  background: url(../img/search/plane.png);
+}
+
 .header {
   background: #fff;
   width: 100%;
+}
+
+.header_index {
+  background: transparent;
+  position: absolute;
+  color: #fff;
+  z-index: 10;
 }
 
 .nav {
@@ -316,10 +513,47 @@ body {
   height: 18px;
 }
 
+.menu__link_airplane-index {
+  padding-left: 28px;
+  position: relative;
+}
+
+.menu__link_airplane-index::before {
+  background: url(../img/index/airplane.svg);
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 24px;
+  height: 20px;
+}
+
+.menu__link_hotel-index {
+  padding-left: 28px;
+  position: relative;
+}
+
+.menu__link_hotel-index::before {
+  background: url(../img/index/hotel.svg);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 18px;
+}
+
 .menu__link_sign {
   background: #112211;
   padding: 15px 24px;
   color: #fff;
+  border-radius: 8px;
+}
+
+.menu__link_sign-index {
+  background: #fff;
+  padding: 15px 24px;
+  color: #112211;
   border-radius: 8px;
 }
 
@@ -331,6 +565,117 @@ body {
 .menu-mobile,
 .menu-btn {
   display: none;
+}
+
+.intro {
+  background: url(../img/bgintro.jpg) no-repeat center/cover;
+  padding-top: 150px;
+  width: 100%;
+  height: 599px;
+  border-radius: 24px;
+  position: relative;
+}
+
+.intro::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6)));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border-radius: 24px;
+}
+
+.intro__inner {
+  position: relative;
+  z-index: 10;
+}
+
+.intro__suptitel {
+  font-size: 45px;
+  line-height: 120%;
+  text-align: center;
+  color: #fff;
+}
+
+.intro__titel {
+  margin: 4px 0 16px 0;
+  font-size: 80px;
+  line-height: 120%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.intro__subtitel {
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #fff;
+}
+
+.intro__search {
+  background: #fff;
+  padding-top: 20px;
+  max-width: 1232px;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  border-radius: 16px;
+}
+
+.intro__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.intro__btn {
+  background: #fff;
+  padding: 0 11px 0 32px;
+  font-size: 16px;
+  line-height: 120%;
+  color: #112211;
+  cursor: pointer;
+  border: none;
+  position: relative;
+}
+
+.intro__btn::before {
+  content: "";
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: o;
+}
+
+.intro__btn_airplane::before {
+  background: url(../img/airplane.svg);
+}
+
+.intro__btn_hotel::before {
+  background: url(../img/hotel.svg);
+  width: 22px;
+  height: 18px;
+}
+
+.intro__span {
+  background: #D7E2EE;
+  width: 48px;
+  height: 1px;
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .footer {
@@ -515,12 +860,36 @@ body {
 }
 
 @supports (-webkit-appearance:none) {
+  .search__btn::before {
+    background: url(../img/search/plane.webp);
+  }
+
   .menu__link_airplane::before {
     background-image: url(../img/airplane.svg);
   }
 
   .menu__link_hotel::before {
     background-image: url(../img/hotel.svg);
+  }
+
+  .menu__link_airplane-index::before {
+    background-image: url(../img/index/airplane.svg);
+  }
+
+  .menu__link_hotel-index::before {
+    background-image: url(../img/index/hotel.svg);
+  }
+
+  .intro {
+    background-image: url(../img/bgintro.webp);
+  }
+
+  .intro__btn_airplane::before {
+    background: url(../img/airplane.svg);
+  }
+
+  .intro__btn_hotel::before {
+    background: url(../img/hotel.svg);
   }
 }
 

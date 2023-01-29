@@ -2,10 +2,109 @@
 @import 'block/let';
 @import 'block/reset';
 @import 'block/global';
+//Main Global
+//Search
+.search {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    &__titel {
+        @extend %Montserrat-SemiBold;
+        font-size: 20px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__info {
+        margin: 32px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__fieldset {
+        max-width: 324px;
+        width: 100%;
+        padding:0 5px 5px 5px;
+        border: 1px solid #79747E;
+        border-radius: 4px;
+        &_lite {
+            max-width: 140px;
+            width: 100%
+        }
+    }
+    &__legend {
+        @extend %Montserrat-Regular;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        @extend %Montserrat-Regular;
+        font-size: 16px;
+        line-height: 120%;
+        color: #1C1B1F;
+        &::placeholder {
+            @extend %Montserrat-Regular;
+            font-size: 16px;
+            line-height: 120%;
+            color: #1C1B1F;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__input-code {
+        padding: 10px;
+        border: none;
+        outline: none;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        &::placeholder {
+            @extend %Montserrat-Medium;
+            font-size: 14px;
+            line-height: 120%;
+            color: #112211;
+        }
+    }
+    &__btn {
+        padding: 16px 16px 16px 34px;
+        background-color: #8DD3BB;
+        border: none;
+        border-radius: 4px;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        cursor: pointer;
+        position: relative;
+        &::before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 18px;
+            left: 16px;
+            background: url(../img/search/plane.png);
+        }
+    }
+}
+
+// /Main Global
 //Header
 .header {
     width: 100%;
     background-color: #fff;
+}
+.header_index {
+    position: absolute;
+    background-color: transparent;
+    color: #fff;
+    z-index: 10;
 }
 .nav {
     padding: 23px 0;
@@ -46,10 +145,42 @@
                 background-image: url(../img/hotel.svg);
             }
         }
+        &_airplane-index {
+            padding-left: 28px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 24px;
+                height: 20px;
+                background-image: url(../img/index/airplane.svg);
+            }
+        }
+        &_hotel-index {
+            padding-left: 28px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 22px;
+                height: 18px;
+                background-image: url(../img/index/hotel.svg);
+            }
+        }
         &_sign {
             padding: 15px 24px;
             background-color: #112211;
             color: #fff;
+            border-radius: 8px;
+        }
+        &_sign-index {
+            padding: 15px 24px;
+            background-color: #fff;
+            color: #112211;
             border-radius: 8px;
         }
     }
@@ -158,6 +289,104 @@
     .menu-btn._active::after {
         bottom: 50%;
         transform: rotate(45deg) translate(0px, 50%);
+    }
+}
+//Intro
+.intro {
+    padding-top: 150px;
+    background-image: url(../img/bgintro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 599px;
+    border-radius: 24px;
+    position: relative;
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        border-radius: 24px;
+    }
+    &__inner {
+        position: relative;
+        z-index: 10;
+    }
+    &__suptitel {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 45px;
+        line-height: 120%;
+        text-align: center;
+        color: #fff;
+    }
+    &__titel {
+        margin: 4px 0 16px 0;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 80px;
+        line-height: 120%;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    &__subtitel {
+        @extend %Montserrat-SemiBold;
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+        color: #fff;
+    }
+    &__search {
+        padding-top: 20px;
+        max-width: 1232px;
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        background-color: #fff;
+        border-radius: 16px;
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+    &__btn {
+        padding: 0 11px 0 32px;
+        @extend %Montserrat-SemiBold;
+        font-size: 16px;
+        line-height: 120%;
+        color: #112211;
+        cursor: pointer;
+        background-color: #fff;
+        border: none;
+        position: relative;
+        &::before {
+            content: "";
+            width: 24px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: o;
+        }
+        &_airplane::before {
+            background: url(../img/airplane.svg);
+        }
+        &_hotel::before {
+            background: url(../img/hotel.svg);
+            width: 22px;
+            height: 18px;
+        }
+    }
+    &__span {
+        width: 48px;
+        height: 1px;
+        display: inline-block;
+        background-color: #D7E2EE;
+        transform: rotate(90deg);
     }
 }
 //Footer
