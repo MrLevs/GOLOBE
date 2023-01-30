@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/mixitup.min.js"></script>
     <script defer src="js/main.js"></script>
     <title>Document</title>
 </head>
@@ -37,7 +38,7 @@
                     <button class="menu-btn">
                         <span></span>
                     </button>
-                    <ul class="menu-mobile">
+                    <ul class="menu-mobile menu-mobile_color">
                         <li class="menu__item">
                             <a href="#" class="menu__link menu__link_airplane">Find Flight</a>
                         </li>
@@ -64,65 +65,80 @@
                     </div>
                     <div class="intro__search">
                         <div class="intro__button">
-                            <button class="intro__btn intro__btn_airplane">Flights</button>
+                            <button class="intro__btn intro__btn_airplane" data-filter=".flight">Flights</button>
                             <span class="intro__span"></span>
-                            <button class="intro__btn intro__btn_hotel">Stays</button>
+                            <button class="intro__btn intro__btn_hotel" data-filter=".stays">Stays</button>
                         </div>
-                        <div class="search">
-                            <h1 class="search__titel">Where are you flying? </h1>
-                            <form class="search__inner">
-                                <div class="search__info">
-                                    <fieldset class="search__fieldset">
-                                        <legend class="search__legend">From - To</legend>
-                                        <input class="search__input" type="text" placeholder="Lahore - Karachi">
-                                    </fieldset>
-                                    <fieldset class="search__fieldset search__fieldset_lite">
-                                        <legend class="search__legend">Trip</legend>
-                                        <input class="search__input" type="text" placeholder="Return">
-                                    </fieldset>
-                                    <fieldset class="search__fieldset">
-                                        <legend class="search__legend">Depart - Return</legend>
-                                        <input class="search__input" type="text" placeholder="07 Nov 22 - 13 Nov 22">
-                                    </fieldset>
-                                    <fieldset class="search__fieldset">
-                                        <legend class="search__legend">Passenger - Class</legend>
-                                        <input class="search__input" type="text" placeholder="1 Passenger, Economy">
-                                    </fieldset>
-                                </div>
-                                <div class="search__button">
-                                    <input class="search__input-code" type="text" placeholder="+ Add Promo Code">
-                                    <button class="search__btn">Show Filghts</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="search">
-                            <h1 class="search__titel">Where are you flying? </h1>
-                            <form class="search__inner">
-                                <div class="search__info">
-                                    <fieldset class="search__fieldset">
-                                        <legend class="search__legend">Enter Destination</legend>
-                                        <input class="search__input" type="text" placeholder="Istanbul, Turkey">
-                                    </fieldset>
-                                    <fieldset class="search__fieldset search__fieldset_lite">
-                                        <legend class="search__legend">Check In</legend>
-                                        <input class="search__input" type="text" placeholder="Fri 12/2">
-                                    </fieldset>
-                                    <fieldset class="search__fieldset">
-                                        <legend class="search__legend">Check Out</legend>
-                                        <input class="search__input" type="text" placeholder="Sun 12/4">
-                                    </fieldset>
-                                    <fieldset class="search__fieldset">
-                                        <legend class="search__legend">Rooms & Guests</legend>
-                                        <input class="search__input" type="text" placeholder="1 room, 2 guests">
-                                    </fieldset>
-                                </div>
-                                <div class="search__button">
-                                    <input class="search__input-code" type="text" placeholder="+ Add Promo Code">
-                                    <button class="search__btn">Show Places</button>
-                                </div>
-                            </form>
+                        <div class="intro__box">
+                            <div class="search mix flight">
+                                <h1 class="search__titel">Where are you flying? </h1>
+                                <form class="search__inner">
+                                    <div class="search__info">
+                                        <fieldset class="search__fieldset">
+                                            <legend class="search__legend">From - To</legend>
+                                            <input class="search__input search__input_vector" type="text" placeholder="Lahore - Karachi">
+                                        </fieldset>
+                                        <fieldset class="search__fieldset search__fieldset_lite">
+                                            <legend class="search__legend">Trip</legend>
+                                            <select class="search__select-plane" name="" id="">
+                                                <option class="search__option-ticket" value="1">Return</option>
+                                                <option class="search__option-ticket" value="2">One-way</option>
+                                            </select>
+                                        </fieldset>
+                                        <fieldset class="search__fieldset">
+                                            <legend class="search__legend">Depart - Return</legend>
+                                            <input class="search__input" type="date">
+                                        </fieldset>
+                                        <fieldset class="search__fieldset">
+                                            <legend class="search__legend">Passenger - Class</legend>
+                                            <input class="search__input" type="text" placeholder="1 Passenger, Economy">
+                                        </fieldset>
+                                    </div>
+                                    <div class="search__button">
+                                        <input class="search__input-code" type="text" placeholder="+ Add Promo Code">
+                                        <button class="search__btn search__btn_plane">Show Filghts</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="search mix stays">
+                                <h1 class="search__titel">Where are you flying? </h1>
+                                <form class="search__inner">
+                                    <div class="search__info">
+                                        <fieldset class="search__fieldset search__fieldset_xl">
+                                            <legend class="search__legend">Enter Destination</legend>
+                                            <input class="search__input search__input_img" type="text" placeholder="Istanbul, Turkey">
+                                        </fieldset>
+                                        <fieldset class="search__fieldset search__fieldset_width">
+                                            <legend class="search__legend">Check In</legend>
+                                            <input class="search__input" type="date" placeholder="Fri 12/2">
+                                        </fieldset>
+                                        <fieldset class="search__fieldset search__fieldset_width">
+                                            <legend class="search__legend">Check Out</legend>
+                                            <input class="search__input" type="date" placeholder="Sun 12/4">
+                                        </fieldset>
+                                        <fieldset class="search__fieldset search__fieldset_width">
+                                            <legend class="search__legend">Rooms & Guests</legend>
+                                            <select class="search__select-room search__select-room_img" name="" id="">
+                                                <option class="search__option-room" value="1">1 room, 2 guests</option>
+                                                <option class="search__option-room" value="2">2 room, 4 guests</option>
+                                                <option class="search__option-room" value="3">1 room, 1 guests</option>
+                                                <option class="search__option-room" value="4">3 room, 6 guests</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                    <div class="search__button">
+                                        <input class="search__input-code" type="text" placeholder="+ Add Promo Code">
+                                        <button class="search__btn search__btn_build">Show Places</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section class="popular">
+                <div class="container">
+
                 </div>
             </section>
         </main>

@@ -110,6 +110,8 @@
 
 .footer__input::placeholder,
 .footer__input,
+.search__select-room,
+.search__select-plane,
 .search__input::placeholder,
 .search__input,
 .search__legend {
@@ -330,6 +332,16 @@ body {
   width: 100%;
 }
 
+.search__fieldset_width {
+  max-width: 240px;
+  width: 100%;
+}
+
+.search__fieldset_xl {
+  max-width: 420px;
+  width: 100%;
+}
+
 .search__legend {
   font-size: 14px;
   line-height: 120%;
@@ -374,6 +386,40 @@ body {
   font-size: 16px;
   line-height: 120%;
   color: #1C1B1F;
+}
+
+.search__input_img {
+  padding-left: 35px;
+  background: url(../img/hotel.svg) no-repeat 1% center;
+}
+
+.search__input_vector {
+  padding-right: 22px;
+  background: url(../img/search/vector.svg) no-repeat 98% center;
+}
+
+.search__select-plane {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__select-room {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C1B1F;
+}
+
+.search__select-room_img {
+  background: url(../img/search/man.svg) no-repeat 2% center;
 }
 
 .search__button {
@@ -443,7 +489,18 @@ body {
   position: absolute;
   top: 18px;
   left: 16px;
+}
+
+.search__btn_plane::before {
   background: url(../img/search/plane.png);
+}
+
+.search__btn_build::before {
+  width: 15px;
+  height: 16px;
+  top: 15px;
+  left: 14px;
+  background: url(../img/search/building.svg);
 }
 
 .header {
@@ -591,7 +648,7 @@ body {
 
 .intro__inner {
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 .intro__suptitel {
@@ -623,9 +680,11 @@ body {
   max-width: 1232px;
   width: 100%;
   position: absolute;
-  z-index: 10;
-  bottom: 0;
+  z-index: 5;
+  bottom: -250px;
   border-radius: 16px;
+  -webkit-box-shadow: 0 4px 16px rgba(141, 211, 187, 0.3);
+  box-shadow: 0 4px 16px rgba(141, 211, 187, 0.3);
 }
 
 .intro__button {
@@ -640,7 +699,7 @@ body {
 
 .intro__btn {
   background: #fff;
-  padding: 0 11px 0 32px;
+  padding: 0 11px 10px 32px;
   font-size: 16px;
   line-height: 120%;
   color: #112211;
@@ -678,6 +737,15 @@ body {
   transform: rotate(90deg);
 }
 
+.intro .mixitup-control-active {
+  border-bottom: 4px solid #8DD3BB;
+}
+
+.popular {
+  padding-top: 330px;
+  height: 600px;
+}
+
 .footer {
   background: #8DD3BB;
   padding-top: 218px;
@@ -700,6 +768,8 @@ body {
   justify-content: space-between;
   position: absolute;
   top: -154px;
+  -webkit-box-shadow: 0 4px 16px rgba(17, 34, 17, 0.3);
+  box-shadow: 0 4px 16px rgba(17, 34, 17, 0.3);
 }
 
 .footer__mail {
@@ -860,8 +930,24 @@ body {
 }
 
 @supports (-webkit-appearance:none) {
-  .search__btn::before {
+  .search__input_img {
+    background: url(../img/hotel.svg) no-repeat 1% center;
+  }
+
+  .search__input_vector {
+    background: url(../img/search/vector.svg) no-repeat 98% center;
+  }
+
+  .search__select-room_img {
+    background: url(../img/search/man.svg) no-repeat 2% center;
+  }
+
+  .search__btn_plane::before {
     background: url(../img/search/plane.webp);
+  }
+
+  .search__btn_build::before {
+    background: url(../img/search/building.svg);
   }
 
   .menu__link_airplane::before {
@@ -959,6 +1045,10 @@ body {
     height: 65px;
     background-color: #fff;
     z-index: 2;
+  }
+
+  .menu-mobile_color::before {
+    background-color: transparent;
   }
 
   .menu-btn {

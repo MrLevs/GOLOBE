@@ -29,6 +29,14 @@
             max-width: 140px;
             width: 100%
         }
+        &_width {
+            max-width: 240px;
+            width: 100%;
+        }
+        &_xl {
+            max-width: 420px;
+            width: 100%;
+        }
     }
     &__legend {
         @extend %Montserrat-Regular;
@@ -50,6 +58,37 @@
             font-size: 16px;
             line-height: 120%;
             color: #1C1B1F;
+        }
+        &_img {
+            padding-left: 35px;
+            background: url(../img/hotel.svg) no-repeat 1% center;
+        }
+        &_vector {
+            padding-right: 22px;
+            background: url(../img/search/vector.svg) no-repeat 98% center;
+        }
+    }
+    &__select-plane {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        @extend %Montserrat-Regular;
+        font-size: 16px;
+        line-height: 120%;
+        color: #1C1B1F;
+    }
+    &__select-room {
+        width: 100%;
+        padding: 10px 10px 10px 30px;
+        border: none;
+        outline: none;
+        @extend %Montserrat-Regular;
+        font-size: 16px;
+        line-height: 120%;
+        color: #1C1B1F;
+        &_img {
+            background: url(../img/search/man.svg) no-repeat 2% center;
         }
     }
     &__button {
@@ -89,11 +128,19 @@
             position: absolute;
             top: 18px;
             left: 16px;
+        }
+        &_plane::before {
             background: url(../img/search/plane.png);
+        }
+        &_build::before {
+            width: 15px;
+            height: 16px;
+            top: 15px;
+            left: 14px;
+            background: url(../img/search/building.svg);
         }
     }
 }
-
 // /Main Global
 //Header
 .header {
@@ -243,6 +290,9 @@
         background-color: #fff;
         z-index: 2;
     }
+    .menu-mobile_color::before {
+        background-color: transparent;
+    }
     .menu-btn {
         display: block;
         position: relative;
@@ -314,7 +364,7 @@
     }
     &__inner {
         position: relative;
-        z-index: 10;
+        z-index: 5;
     }
     &__suptitel {
         @extend %TradeGothicLTStd-BoldExt;
@@ -344,10 +394,11 @@
         max-width: 1232px;
         width: 100%;
         position: absolute;
-        z-index: 10;
-        bottom: 0;
+        z-index: 5;
+        bottom: -250px;
         background-color: #fff;
         border-radius: 16px;
+        box-shadow: 0 4px 16px rgba( 141, 211, 187, 0.3);
     }
     &__button {
         display: flex;
@@ -355,7 +406,7 @@
         padding: 20px;
     }
     &__btn {
-        padding: 0 11px 0 32px;
+        padding: 0 11px 10px 32px;
         @extend %Montserrat-SemiBold;
         font-size: 16px;
         line-height: 120%;
@@ -388,6 +439,15 @@
         background-color: #D7E2EE;
         transform: rotate(90deg);
     }
+    .mixitup-control-active {
+        border-bottom: 4px solid #8DD3BB;
+    }
+}
+//Popular
+.popular {
+    padding-top: 330px;
+    height: 600px;
+
 }
 //Footer
 .footer {
@@ -406,6 +466,7 @@
         justify-content: space-between;
         position: absolute;
         top: -154px;
+        box-shadow: 0 4px 16px rgba( 17, 34, 17, 0.3);
     }
     &__mail {
         padding: 24px 0;

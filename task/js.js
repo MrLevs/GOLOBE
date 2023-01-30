@@ -17,7 +17,7 @@ const js = function() {
             }))
         }))
         .pipe(babel())
-        .pipe(webpack(app.webpack))
+
         .pipe(gulp.dest(path.js.dest, { sourcemaps: app.isDev }))
 }
 
