@@ -72,6 +72,10 @@
 
 .footer__link,
 .footer__text,
+.reviews__studio,
+.reviews__text,
+.trip__info-text,
+.heading__link-btn,
 .search__btn,
 .search__input-code::placeholder,
 .search__input-code {
@@ -110,6 +114,8 @@
 
 .footer__input::placeholder,
 .footer__input,
+.trip__intro-text,
+.heading__subtitel,
 .search__select-room,
 .search__select-plane,
 .search__input::placeholder,
@@ -121,9 +127,11 @@
 }
 
 .footer__button,
+.trip__info-title,
 .intro__btn,
 .intro__subtitel,
 .menu__link,
+.heading__titel,
 .search__titel {
   font-family: "Montserrat-SemiBold";
   font-style: normal;
@@ -133,6 +141,11 @@
 .footer__nav-titel,
 .footer__subtitel,
 .footer__titel,
+.reviews__browser-name,
+.reviews__name,
+.reviews__link,
+.reviews__titel,
+.trip__intro-titel,
 .intro__titel,
 .intro__suptitel {
   font-family: "TradeGothicLTStd-BoldExt";
@@ -503,6 +516,50 @@ body {
   background: url(../img/search/building.svg);
 }
 
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.heading__titel {
+  margin-bottom: 16px;
+  font-size: 32px;
+  line-height: 120%;
+  color: #000;
+}
+
+.heading__subtitel {
+  font-size: 16px;
+  line-height: 120%;
+  color: #112211;
+  opacity: 0.75;
+}
+
+.heading__link-btn {
+  background: #fff;
+  padding: 12px 16px;
+  border: 1px solid #8DD3BB;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.heading__link-btn:hover {
+  background: #8dd3bb;
+  border: 1px solid #000;
+}
+
 .header {
   background: #fff;
   width: 100%;
@@ -741,9 +798,229 @@ body {
   border-bottom: 4px solid #8DD3BB;
 }
 
-.popular {
+.trip {
   padding-top: 330px;
-  height: 600px;
+}
+
+.trip__content {
+  margin: 40px 0 80px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.trip__link {
+  display: inline-block;
+}
+
+.trip__card {
+  background: #fff;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 16px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 16px rgba(17, 34, 17, 0.3);
+  box-shadow: 0 4px 16px rgba(17, 34, 17, 0.3);
+}
+
+.trip__card-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.trip__info-title {
+  font-size: 16px;
+  line-height: 120%;
+  color: #112211;
+  opacity: 0.7;
+}
+
+.trip__info-text {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.trip__intro {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 24px;
+}
+
+.trip__intro-inner {
+  width: 100%;
+  position: relative;
+}
+
+.trip__intro-inner::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: -1px;
+  position: absolute;
+  background: #10171B;
+  opacity: 0.4;
+  border-radius: 20px;
+}
+
+.trip__intro-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.trip__intro-info {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.trip__intro-titel {
+  font-size: 40px;
+  line-height: 120%;
+  color: #fff;
+  text-align: center;
+}
+
+.trip__intro-text {
+  margin: 8px 0 16px 0;
+  max-width: 389px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 120%;
+  color: #fff;
+  text-align: center;
+}
+
+.reviews {
+  padding: 70px 0 244px 0;
+}
+
+.reviews__content {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 20px;
+}
+
+.reviews__card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 4px 16px rgba(17, 34, 17, 0.3);
+  box-shadow: 2px 4px 16px rgba(17, 34, 17, 0.3);
+}
+
+.reviews__titel {
+  font-size: 24px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.reviews__text {
+  margin: 16px 0 12px 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  opacity: 0.5;
+}
+
+.reviews__inner {
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+.reviews__link {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.reviews__link:hover {
+  color: #be0404;
+}
+
+.reviews__stars {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 12px;
+}
+
+.reviews__name {
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.reviews__studio {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  opacity: 0.5;
+}
+
+.reviews__browser {
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.reviews__browser-img {
+  width: 100%;
+}
+
+.reviews__browser-name {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  opacity: 0.5;
+}
+
+.reviews__img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .footer {
@@ -1048,7 +1325,9 @@ body {
   }
 
   .menu-mobile_color::before {
-    background-color: transparent;
+    background-color: #7975bb;
+    -webkit-filter: blur(33px);
+    filter: blur(33px);
   }
 
   .menu-btn {
@@ -1072,6 +1351,12 @@ body {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     background-color: black;
+  }
+
+  .menu-btn_color span,
+  .menu-btn_color::before,
+  .menu-btn_color::after {
+    background-color: #fff;
   }
 
   .menu-btn::before,
