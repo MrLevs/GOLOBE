@@ -141,6 +141,40 @@
         }
     }
 }
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__titel {
+        margin-bottom: 16px;
+        @extend %Montserrat-SemiBold;
+        font-size: 32px;
+        line-height: 120%;
+        color: #000;
+    }
+    &__subtitel {
+        @extend %Montserrat-Regular;
+        font-size: 16px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.75;
+    }
+    &__link-btn {
+        padding: 12px 16px;
+        background-color: #fff;
+        border: 1px solid #8DD3BB;
+        border-radius: 4px;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        transition: 0.3s;
+        &:hover {
+            background-color: #8dd3bb;
+            border:1px solid #000;
+        }
+    }
+}
 // /Main Global
 //Header
 .header {
@@ -291,7 +325,8 @@
         z-index: 2;
     }
     .menu-mobile_color::before {
-        background-color: transparent;
+        background-color: #7975bb;
+        filter: blur(33px);
     }
     .menu-btn {
         display: block;
@@ -311,6 +346,11 @@
         height: 10%;
         transition: all 0.3s ease 0s;
         background-color: black;
+    }
+    .menu-btn_color span,
+    .menu-btn_color::before,
+    .menu-btn_color::after {
+        background-color: #fff;
     }
     .menu-btn::before,
     .menu-btn::after {
@@ -443,11 +483,185 @@
         border-bottom: 4px solid #8DD3BB;
     }
 }
-//Popular
-.popular {
+//Trip
+.trip {
     padding-top: 330px;
-    height: 600px;
-
+    &__content {
+        margin: 40px 0 80px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+    &__link {
+        display: inline-block;
+    }
+    &__card {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(17, 34, 17, 0.3);
+    }
+    &__card-img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    &__info-title {
+        @extend %Montserrat-SemiBold;
+        font-size: 16px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.7;
+    }
+    &__info-text {
+        margin-top: 8px;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__intro {
+        width: 100%;
+        display: flex;
+        gap: 0 24px;
+    }
+    &__intro-inner {
+        width: 100%;
+        position: relative;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: -1px;
+            position: absolute;
+            background: #10171B;
+            opacity: 0.4;
+            border-radius: 20px;
+        }
+    }
+    &__intro-img {
+        width: 100%;
+        border-radius: 20px;
+    }
+    &__intro-info {
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__intro-titel {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 40px;
+        line-height: 120%;
+        color: #fff;
+        text-align: center;
+    }
+    &__intro-text {
+        margin: 8px 0 16px 0;
+        max-width: 389px;
+        width: 100%;
+        @extend %Montserrat-Regular;
+        font-size: 16px;
+        line-height: 120%;
+        color: #fff;
+        text-align: center;
+    }
+}
+//Reviews
+.reviews {
+    padding: 70px 0 244px 0;
+    &__content {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 20px;
+    }
+    &__card {
+        padding: 24px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 2px 4px 16px rgba(17, 34, 17, 0.3);
+    }
+    &__titel {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 24px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__text {
+        margin: 16px 0 12px 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.5;
+    }
+    &__inner {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: end;
+    }
+    &__link {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        transition: 0.3s;
+        &:hover {
+            color: #be0404;
+        }
+    }
+    &__stars {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 0 12px;
+    }
+    &__name {
+        margin-bottom: 4px;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__studio {
+        margin-bottom: 12px;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.5;
+    }
+    &__browser {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+    }
+    &__browser-img {
+        width: 100%;
+    }
+    &__browser-name {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        opacity: 0.5;
+    }
+    &__img {
+        width: 100%;
+        border-radius: 8px;
+    }
 }
 //Footer
 .footer {
