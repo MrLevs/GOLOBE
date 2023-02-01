@@ -121,6 +121,7 @@
         color: #112211;
         cursor: pointer;
         position: relative;
+        transition: 0.3s;
         &::before {
             content: "";
             width: 14px;
@@ -128,6 +129,9 @@
             position: absolute;
             top: 18px;
             left: 16px;
+        }
+        &:hover {
+            background-color: #e7e76a;
         }
         &_plane::before {
             background: url(../img/search/plane.png);
@@ -169,6 +173,7 @@
         line-height: 120%;
         color: #112211;
         transition: 0.3s;
+        text-align: center;
         &:hover {
             background-color: #8dd3bb;
             border:1px solid #000;
@@ -389,7 +394,6 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 599px;
     border-radius: 24px;
     position: relative;
     &::after {
@@ -433,7 +437,7 @@
         padding-top: 20px;
         max-width: 1232px;
         width: 100%;
-        position: absolute;
+        position: relative;
         z-index: 5;
         bottom: -250px;
         background-color: #fff;
@@ -503,12 +507,24 @@
         background-color: #fff;
         border-radius: 16px;
         box-shadow: 0 4px 16px rgba(17, 34, 17, 0.3);
+        transition: 0.3s;
+        &:hover {
+            background-color: #79747E;
+            .trip__info-titel {
+                color: #0ad8ef;
+                transition: 0.3s;
+            }
+            .trip__info-text {
+                transition: 0.3s;
+                color: #ff7b00;
+            }
+        }
     }
     &__card-img {
         width: 100%;
         border-radius: 8px;
     }
-    &__info-title {
+    &__info-titel {
         @extend %Montserrat-SemiBold;
         font-size: 16px;
         line-height: 120%;
@@ -665,8 +681,6 @@
 }
 //Footer
 .footer {
-    padding-top: 218px;
-    padding-bottom: 64px;
     width: 100%;
     background-color: #8DD3BB;
     position: relative;
@@ -678,7 +692,7 @@
         border-radius: 20px;
         display: flex;
         justify-content: space-between;
-        position: absolute;
+        position: relative;
         top: -154px;
         box-shadow: 0 4px 16px rgba( 17, 34, 17, 0.3);
     }
@@ -741,7 +755,12 @@
         color: #fff;
         cursor: pointer;
     }
+    &__img {
+        width: 100%;
+    }
     &__inner {
+        position: relative;
+        top: -64px;
         display: flex;
         justify-content: space-between;
     }
@@ -785,6 +804,132 @@
         &:hover {
             color: #1b0c03;
             opacity: 1;
+        }
+    }
+}
+//Media Footer
+@media(max-width: 750px) {
+    .footer {
+        &__box {
+            padding: 0 10px;
+            flex-direction: column;
+        }
+        &__titel {
+            font-size: 20px;
+        }
+        &__subtitel {
+            font-size: 16px;
+        }
+        &__form {
+            flex-direction: column;
+        }
+        &__inner {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px 0;
+        }
+        &__nav {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    }
+}
+@media(max-width: 533px) {
+    .footer {
+        &__nav {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media(max-width: 365px) {
+    .footer {
+        &__nav {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+//Media Main
+@media(max-width: 990px) {
+    .search {
+        &__info {
+            flex-wrap: wrap;
+            gap: 10px 0;
+        }
+    }
+    .intro {
+        &__suptitel {
+            font-size: 30px;
+        }
+        &__titel {
+            font-size: 60px;
+        }
+    }
+    .trip {
+        &__info-titel {
+            font-size: 14px;
+        }
+    }
+    .reviews {
+        &__titel {
+            font-size: 16px;
+        }
+        &__content {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px 0;
+        }
+    }
+}
+@media(max-width: 750px) {
+    .search {
+        &__button {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px 0;
+        }
+    }
+    .intro {
+        &__suptitel {
+            font-size: 20px;
+        }
+        &__titel {
+            font-size: 40px;
+        }
+        &__subtitel {
+            font-size: 16px;
+        }
+    }
+    .trip {
+        &__content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__intro {
+            flex-direction: column;
+            gap: 30px 0;
+        }
+    }
+}
+@media(max-width: 557px) {
+    .heading {
+        flex-direction: column;
+        gap: 30px 0;
+        &__titel {
+            font-size: 16px;
+            text-align: center;
+        }
+        &__subtitel {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    .trip {
+        &__content {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__card {
+            justify-content: space-evenly;
         }
     }
 }
