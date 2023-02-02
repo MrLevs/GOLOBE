@@ -145,6 +145,7 @@
         }
     }
 }
+//Heading
 .heading {
     display: flex;
     justify-content: space-between;
@@ -157,6 +158,8 @@
         color: #000;
     }
     &__subtitel {
+        max-width: 860px;
+        width: 100%;
         @extend %Montserrat-Regular;
         font-size: 16px;
         line-height: 120%;
@@ -177,6 +180,79 @@
         &:hover {
             background-color: #8dd3bb;
             border:1px solid #000;
+        }
+    }
+}
+//Travel
+.travel {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    &__card {
+        width: 296px;
+        padding: 286px 24px 24px 24px;
+        background-image: url(../img/flight/melbourne.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        &_paris {
+            background-image: url(../img/flight/paris.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        &_london {
+            background-image: url(../img/flight/london.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        &_columbia {
+            background-image: url(../img/flight/columbia.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    &__info {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    &__titel {
+        @extend %Montserrat-SemiBold;
+        font-size: 24px;
+        line-height: 120%;
+        color: #fff;
+    }
+    &__text {
+        @extend %Montserrat-Regular;
+        font-size: 14px;
+        line-height: 120%;
+        color: #fff;
+    }
+    &__priсe {
+        @extend %Montserrat-SemiBold;
+        font-size: 24px;
+        line-height: 120%;
+        color: #fff;
+    }
+    &__btn {
+        width: 100%;
+        padding: 16px;
+        background-color: #8DD3BB;
+        border-radius: 4px;
+        border: none;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            background-color: #e7e76a;
         }
     }
 }
@@ -283,6 +359,7 @@
 @media(max-width: 610px) {
     .header {
         position: fixed;
+        z-index: 10;
     }
     .nav {
         padding: 12px 0;
@@ -757,6 +834,7 @@
     }
     &__img {
         width: 100%;
+        height: 100%;
     }
     &__inner {
         position: relative;
@@ -823,6 +901,9 @@
         &__form {
             flex-direction: column;
         }
+        &__input {
+            max-width: none;
+        }
         &__inner {
             flex-direction: column;
             align-items: center;
@@ -850,7 +931,18 @@
         }
     }
 }
-//Media Main
+//Media Main and Media Main Global
+@media(max-width: 1245px) {
+    .travel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 30px;
+        &__card {
+            width: 100%;
+        }
+    }
+}
 @media(max-width: 990px) {
     .search {
         &__info {
@@ -911,6 +1003,11 @@
         }
     }
 }
+@media(max-width: 650px) {
+    .travel {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 @media(max-width: 557px) {
     .heading {
         flex-direction: column;
@@ -933,3 +1030,4 @@
         }
     }
 }
+@import 'block/flight-search';
