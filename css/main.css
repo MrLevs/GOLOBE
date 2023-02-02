@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: "Manrope-Regular";
   src: url(../font/Manrope-Regular.ttf);
@@ -70,11 +72,14 @@
   font-weight: 500;
 }
 
+.traveling__btn,
+.flights__subtitel,
 .footer__link,
 .footer__text,
 .reviews__studio,
 .reviews__text,
 .trip__info-text,
+.travel__btn,
 .heading__link-btn,
 .search__btn,
 .search__input-code::placeholder,
@@ -112,9 +117,12 @@
   font-weight: 400;
 }
 
+.traveling__text,
+.world__pass,
 .footer__input::placeholder,
 .footer__input,
 .trip__intro-text,
+.travel__text,
 .heading__subtitel,
 .search__select-room,
 .search__select-plane,
@@ -126,11 +134,14 @@
   font-weight: 400;
 }
 
+.traveling__price,
 .footer__button,
 .trip__info-titel,
 .intro__btn,
 .intro__subtitel,
 .menu__link,
+.travel__priсe,
+.travel__titel,
 .heading__titel,
 .search__titel {
   font-family: "Montserrat-SemiBold";
@@ -138,6 +149,15 @@
   font-weight: 600;
 }
 
+.traveling__total-text {
+  font-family: "TradeGothicLTExtended";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.traveling__titel,
+.world__name,
+.flights__titel,
 .footer__nav-titel,
 .footer__subtitel,
 .footer__titel,
@@ -543,6 +563,8 @@ body {
 }
 
 .heading__subtitel {
+  max-width: 860px;
+  width: 100%;
   font-size: 16px;
   line-height: 120%;
   color: #112211;
@@ -566,6 +588,85 @@ body {
 .heading__link-btn:hover {
   background: #8dd3bb;
   border: 1px solid #000;
+}
+
+.travel {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.travel__card {
+  background: url(../img/flight/melbourne.jpg) no-repeat center/cover;
+  width: 296px;
+  padding: 286px 24px 24px 24px;
+  border-radius: 12px;
+}
+
+.travel__card_paris {
+  background: url(../img/flight/paris.jpg) no-repeat center/cover;
+}
+
+.travel__card_london {
+  background: url(../img/flight/london.jpg) no-repeat center/cover;
+}
+
+.travel__card_columbia {
+  background: url(../img/flight/columbia.jpg) no-repeat center/cover;
+}
+
+.travel__info {
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.travel__titel {
+  font-size: 24px;
+  line-height: 120%;
+  color: #fff;
+}
+
+.travel__text {
+  font-size: 14px;
+  line-height: 120%;
+  color: #fff;
+}
+
+.travel__priсe {
+  font-size: 24px;
+  line-height: 120%;
+  color: #fff;
+}
+
+.travel__btn {
+  background: #8DD3BB;
+  width: 100%;
+  padding: 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.travel__btn:hover {
+  background: #e7e76a;
 }
 
 .header {
@@ -1164,6 +1265,7 @@ body {
 
 .footer__img {
   width: 100%;
+  height: 100%;
 }
 
 .footer__inner {
@@ -1238,6 +1340,231 @@ body {
   opacity: 1;
 }
 
+.flights {
+  background: url(../img/flight/airport.jpg) no-repeat center/cover;
+  padding-top: 80px;
+}
+
+.flights__titel {
+  max-width: 440px;
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 45px;
+  line-height: 120%;
+  color: #fff;
+}
+
+.flights__subtitel {
+  font-size: 20px;
+  line-height: 120%;
+  color: #fff;
+}
+
+.flights__search {
+  position: relative;
+  bottom: -180px;
+}
+
+.world {
+  padding-top: 260px;
+}
+
+.world__map {
+  background: #8DD3BB;
+  margin-top: 24px;
+}
+
+.world__inner {
+  background: url(../img/flight/map.svg) no-repeat center/cover;
+  position: relative;
+  width: 100%;
+  height: 488px;
+}
+
+.world__link {
+  display: inline-block;
+  position: relative;
+}
+
+.world__link_position {
+  left: 195px;
+  top: 70px;
+}
+
+.world__link_top {
+  left: 690px;
+  top: 85px;
+}
+
+.world__link_left {
+  left: 635px;
+  top: 255px;
+}
+
+.world__link_right {
+  left: 50px;
+  top: 281px;
+}
+
+.world__link_bottom {
+  left: -453px;
+  top: 293px;
+}
+
+.world__card {
+  background: #fff;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 8px;
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.world__card:hover {
+  background: #79747E;
+}
+
+.world__card:hover .world__name,
+.world__card:hover .world__pass {
+  color: #0ad8ef;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.world__img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.world__name {
+  font-size: 16px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.world__pass {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.travel-info {
+  padding-top: 80px;
+}
+
+.traveling {
+  padding: 80px 0 274px 0;
+}
+
+.traveling__content {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+}
+
+.traveling__info {
+  background: #8DD3BB;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.traveling__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.traveling__titel {
+  max-width: 360px;
+  width: 100%;
+  font-size: 40px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.traveling__total {
+  background: #fff;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px 0;
+  border-radius: 8px;
+}
+
+.traveling__total-text {
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.traveling__price {
+  font-size: 20px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.traveling__text {
+  margin: 24px 0 120px 0;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+}
+
+.traveling__btn {
+  background: #fff;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #112211;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.traveling__btn:hover {
+  background: #e7e76a;
+}
+
+.traveling__image {
+  border: 2px solid #8DD3BB;
+  border-radius: 12px;
+}
+
+.traveling__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
 @supports (-webkit-appearance:none) {
   .search__input_img {
     background: url(../img/hotel.svg) no-repeat 1% center;
@@ -1257,6 +1584,22 @@ body {
 
   .search__btn_build::before {
     background: url(../img/search/building.svg);
+  }
+
+  .travel__card {
+    background-image: url(../img/flight/melbourne.webp);
+  }
+
+  .travel__card_paris {
+    background-image: url(../img/flight/paris.webp);
+  }
+
+  .travel__card_london {
+    background-image: url(../img/flight/london.webp);
+  }
+
+  .travel__card_columbia {
+    background-image: url(../img/flight/columbia.webp);
   }
 
   .menu__link_airplane::before {
@@ -1286,6 +1629,135 @@ body {
   .intro__btn_hotel::before {
     background: url(../img/hotel.svg);
   }
+
+  .flights {
+    background-image: url(../img/flight/airport.webp);
+  }
+
+  .world__inner {
+    background-image: url(../img/flight/map.svg);
+  }
+}
+
+@media (max-width: 1275px) {
+  .world__link_position {
+    left: 55px;
+    top: 70px;
+  }
+
+  .world__link_top {
+    left: 547px;
+    top: 85px;
+  }
+
+  .world__link_left {
+    left: 495px;
+    top: 255px;
+  }
+
+  .world__link_right {
+    left: -90px;
+    top: 281px;
+  }
+
+  .world__link_bottom {
+    left: -593px;
+    top: 293px;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media (max-width: 1245px) {
+  .travel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .travel__card {
+    width: 100%;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media (max-width: 1135px) {
+  .world__link_position {
+    left: 20px;
+    top: 70px;
+  }
+
+  .world__link_top {
+    left: 477px;
+    top: 85px;
+  }
+
+  .world__link_left {
+    left: 417px;
+    top: 255px;
+  }
+
+  .world__link_right {
+    left: -160px;
+    top: 281px;
+  }
+
+  .world__link_bottom {
+    left: -663px;
+    top: 293px;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media (max-width: 1075px) {
+  .world__inner {
+    padding: 20px 0;
+    background-image: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .world__card {
+    padding: 10px;
+  }
+
+  .world__link_position,
+  .world__link_top,
+  .world__link_left,
+  .world__link_right,
+  .world__link_bottom {
+    top: 0;
+    left: 0;
+  }
+
+  .traveling__titel {
+    max-width: 100%;
+    width: 70%;
+    font-size: 20px;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
 }
 
 @media (max-width: 990px) {
@@ -1321,6 +1793,25 @@ body {
 }
 }
 
+@media (max-width: 800px) {
+  .traveling__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .traveling__info {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .traveling__text {
+    margin: 24px 0;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
 @media (max-width: 750px) {
   .footer__box {
     padding: 0 10px;
@@ -1343,6 +1834,10 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+
+  .footer__input {
+    max-width: none;
   }
 
   .footer__inner {
@@ -1404,9 +1899,20 @@ body {
 }
 }
 
+@media (max-width: 650px) {
+  .travel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
 @media (max-width: 610px) {
   .header {
     position: fixed;
+    z-index: 10;
   }
 
   .nav {
@@ -1581,6 +2087,30 @@ body {
     justify-content: space-evenly;
   }
 
+  .flights__titel {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .flights__subtitel {
+    text-align: center;
+  }
+
+  .world__inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .traveling__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .traveling__info {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
 @supports (-webkit-appearance:none) {
 
 }
@@ -1599,6 +2129,30 @@ body {
 @media (max-width: 365px) {
   .footer__nav {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media (max-width: 340px) {
+  .traveling__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 15px 0;
+  }
+
+  .traveling__titel {
+    text-align: center;
   }
 
 @supports (-webkit-appearance:none) {
