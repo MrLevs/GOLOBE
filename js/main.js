@@ -10,6 +10,8 @@ if (iconMenu) {
     menuBody.classList.toggle('_active');
   });
 }
+
+//Mixitup
 var mixer = mixitup('.intro__box', {
   load: {
     filter: '.flight'
