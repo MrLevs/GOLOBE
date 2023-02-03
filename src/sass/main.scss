@@ -281,6 +281,7 @@
         @extend %Montserrat-SemiBold;
         font-size: 14px;
         line-height: 120%;
+        transition: 0.3s;
         &_airplane {
             padding-left: 28px;
             position: relative;
@@ -292,6 +293,19 @@
                 width: 24px;
                 height: 20px;
                 background-image: url(../img/airplane.svg);
+            }
+            &::after {
+                content: "";
+                width: 100%;
+                height: 5px;
+                position: absolute;
+                bottom: -34px;
+                left: 0;
+                background-color: #8DD3BB;
+                display: none;
+            }
+            &:hover::after {
+                display: block;
             }
         }
         &_hotel {
@@ -305,6 +319,19 @@
                 width: 22px;
                 height: 18px;
                 background-image: url(../img/hotel.svg);
+            }
+            &::after {
+                content: "";
+                width: 100%;
+                height: 5px;
+                position: absolute;
+                bottom: -34px;
+                left: 0;
+                background-color: #8DD3BB;
+                display: none;
+            }
+            &:hover::after {
+                display: block;
             }
         }
         &_airplane-index {
@@ -333,19 +360,32 @@
                 background-image: url(../img/index/hotel.svg);
             }
         }
+        &_color:hover {
+            color: #8DD3BB;
+        }
         &_sign {
             padding: 15px 24px;
             background-color: #112211;
             color: #fff;
             border-radius: 8px;
+            &:hover {
+                color: #8DD3BB;
+            }
         }
         &_sign-index {
             padding: 15px 24px;
             background-color: #fff;
             color: #112211;
             border-radius: 8px;
+            &:hover {
+                background-color: #112211;
+                color: #8DD3BB;
+            }
         }
     }
+}
+.active::after {
+    display: block;
 }
 .logo__img {
     position: relative;
@@ -1030,4 +1070,7 @@
         }
     }
 }
+//Flight Flow
 @import 'block/flight-search';
+//Hotel Flow
+@import 'block/hotel-search';

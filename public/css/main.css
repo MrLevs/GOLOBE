@@ -134,6 +134,7 @@
   font-weight: 400;
 }
 
+.recent__titel,
 .traveling__price,
 .footer__button,
 .trip__info-titel,
@@ -704,6 +705,9 @@ body {
 .menu__link {
   font-size: 14px;
   line-height: 120%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .menu__link_airplane {
@@ -721,6 +725,21 @@ body {
   height: 20px;
 }
 
+.menu__link_airplane::after {
+  background: #8DD3BB;
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: -34px;
+  left: 0;
+  display: none;
+}
+
+.menu__link_airplane:hover::after {
+  display: block;
+}
+
 .menu__link_hotel {
   padding-left: 28px;
   position: relative;
@@ -734,6 +753,21 @@ body {
   left: 0;
   width: 22px;
   height: 18px;
+}
+
+.menu__link_hotel::after {
+  background: #8DD3BB;
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: -34px;
+  left: 0;
+  display: none;
+}
+
+.menu__link_hotel:hover::after {
+  display: block;
 }
 
 .menu__link_airplane-index {
@@ -766,6 +800,10 @@ body {
   height: 18px;
 }
 
+.menu__link_color:hover {
+  color: #8DD3BB;
+}
+
 .menu__link_sign {
   background: #112211;
   padding: 15px 24px;
@@ -773,11 +811,24 @@ body {
   border-radius: 8px;
 }
 
+.menu__link_sign:hover {
+  color: #8DD3BB;
+}
+
 .menu__link_sign-index {
   background: #fff;
   padding: 15px 24px;
   color: #112211;
   border-radius: 8px;
+}
+
+.menu__link_sign-index:hover {
+  background: #112211;
+  color: #8DD3BB;
+}
+
+.active::after {
+  display: block;
 }
 
 .logo__img {
@@ -1565,6 +1616,27 @@ body {
   border-radius: 12px;
 }
 
+.hotel-search {
+  background: url(../img/hotel/hotel.jpg) no-repeat center/cover;
+}
+
+.recent {
+  padding-top: 260px;
+}
+
+.recent__titel {
+  margin-bottom: 32px;
+  font-size: 32px;
+  line-height: 120%;
+  color: #000;
+}
+
+.recent__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
 @supports (-webkit-appearance:none) {
   .search__input_img {
     background: url(../img/hotel.svg) no-repeat 1% center;
@@ -1636,6 +1708,10 @@ body {
 
   .world__inner {
     background-image: url(../img/flight/map.svg);
+  }
+
+  .hotel-search {
+    background-image: url(../img/hotel/hotel.webp);
   }
 }
 
@@ -1786,6 +1862,16 @@ body {
   .reviews__content {
     grid-template-columns: repeat(1, 1fr);
     gap: 30px 0;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media (max-width: 827px) {
+  .recent__content {
+    grid-template-columns: repeat(2, 1fr);
   }
 
 @supports (-webkit-appearance:none) {
@@ -2109,6 +2195,15 @@ body {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
+  }
+
+  .recent__titel {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .recent__content {
+    grid-template-columns: repeat(1, 1fr);
   }
 
 @supports (-webkit-appearance:none) {

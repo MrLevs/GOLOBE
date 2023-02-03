@@ -11,6 +11,7 @@ if (iconMenu) {
     });
 }
 
+//Mixitup
 var mixer = mixitup('.intro__box', {
     load: {
         filter: '.flight'
