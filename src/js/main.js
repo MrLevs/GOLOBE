@@ -12,7 +12,7 @@ if (iconMenu) {
 }
 
 //Mixitup
-var mixer = mixitup('.intro__box', {
+var mixer = mixitup('.mixitup__box', {
     load: {
         filter: '.flight'
     }
