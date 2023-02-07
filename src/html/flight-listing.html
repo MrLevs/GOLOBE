@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
     <script src="js/mixitup.min.js"></script>
     <script defer src="js/main.js"></script>
     <title>Golobe</title>
@@ -88,6 +89,78 @@
                         <div class="listing__box">
                             <div class="listing__sidebar">
                                 <h2 class="listing__sidebar-titel">Filters</h2>
+                                <div class="spoller">
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Price</button>
+                                        <div class="spoller__content">
+                                            <input type="text" class="price" name="my_range" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Departure Time</button>
+                                        <div class="spoller__content">
+                                            <input type="text" class="time" name="my_range" value="" id="time" />
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Rating</button>
+                                        <div class="spoller__content">
+                                            <div class="spoller__buttons">
+                                                <button class="spoller__btn">0+</button>
+                                                <button class="spoller__btn">1+</button>
+                                                <button class="spoller__btn">2+</button>
+                                                <button class="spoller__btn">3+</button>
+                                                <button class="spoller__btn">4+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Airlines</button>
+                                        <div class="spoller__content">
+                                            <form class="spoller__form" action="URL">
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Emirated</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Fly Dubai</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Qatar</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Etihad</p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Trips</button>
+                                        <div class="spoller__content">
+                                            <form class="spoller__form" action="URL">
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Round trip</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">On Way</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Multi-City</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">My Dates Are Flexible</p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="listing__content">
                                 <div class="listing__content-inner">
@@ -762,6 +835,13 @@
         </main>
         @@include("chunk/footer.html")
     </div>
+
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Plugin JavaScript file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
 </body>
 
 </html>
