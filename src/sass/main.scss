@@ -266,6 +266,7 @@
         margin: 12px 0;
     }
     &__input {
+        padding: 0 20px;
         width: 56px;
         height: 56px;
         position: relative;
@@ -307,7 +308,7 @@
         padding: 0 0 5px 15px;
         border-left: 1px solid rgba(22, 41, 18, 0.3)
     }
-    &__butttons {
+    &__buttons {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -344,10 +345,9 @@
         opacity: 0.6;
     }
     &__border {
-        width: 48px;
-        height: 2px;
+        width: 2px;
+        height: 48px;
         background-color: #D7E2EE;
-        transform: rotate(90deg);
     }
     &__burger {
         position: absolute;
@@ -421,6 +421,7 @@
     }
     &__content-img {
         width: 100%;
+        border-radius: 12px;
     }
     &__content-item {
         width: 80%;
@@ -568,6 +569,63 @@
             background-color: #e7e76a;
             color: #112211;
         }
+    }
+    //Listing Hotel
+    &__hotel-btn {
+        max-width: none;
+    }
+    &__hotel-titel {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 20px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__hotel-inner {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    &__hotel-location {
+        display: flex;
+        align-items: center;
+        gap: 0 5px;
+    }
+    &__hotel-image {
+        width: 100%;
+    }
+    &__hotel-loc {
+        @extend %Montserrat-Medium;
+        font-size: 12px;
+        line-height: 120%;
+        opacity: 0.8;
+        color: #112211;
+    }
+    &__hotel-info {
+        display: flex;
+        align-items: center;
+        gap: 0 32px;
+    }
+    &__hotel-stars {
+        display: flex;
+        align-items: center;
+    }
+    &__hotel-text {
+        margin-left: 5px;
+        @extend %Montserrat-Medium;
+        font-size: 12px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__hotel-box {
+        display: flex;
+        align-items: center;
+    }
+    &__hotel-span {
+        @extend %Montserrat-Bold;
+        font-size: 12px;
+        line-height: 120%;
+        color: #112211;
     }
     //Mixitup
     .mixitup-control-active {
@@ -1399,6 +1457,11 @@
             gap: 10px 0;
         }
     }
+    .listing {
+        &__box {
+            grid-template-columns: 1fr 2fr;
+        }
+    }
     .intro {
         &__suptitel {
             font-size: 30px;
@@ -1419,6 +1482,18 @@
         &__content {
             grid-template-columns: repeat(1, 1fr);
             gap: 30px 0;
+        }
+    }
+}
+@media(max-width: 800px) {
+    .listing {
+        &__box {
+            grid-template-columns: 1fr;
+            gap: 32px 0;
+        }
+        &__content-inner {
+            padding: 0;
+            border-left: none;
         }
     }
 }
@@ -1456,6 +1531,15 @@
     .travel {
         grid-template-columns: repeat(1, 1fr);
     }
+    .listing {
+        padding: 100px 0 274px 0;
+        &__border {
+            display: none;
+        }
+        &__content-box {
+            padding: 0;
+        }
+    }
 }
 @media(max-width: 557px) {
     .heading {
@@ -1470,12 +1554,44 @@
             text-align: center;
         }
     }
+    .listing {
+        &__content-card {
+            flex-direction: column;
+            gap: 20px 0;
+        }
+        &__content-item {
+            width: 100%;
+        }
+    }
     .trip {
         &__content {
             grid-template-columns: repeat(1, 1fr);
         }
         &__card {
             justify-content: space-evenly;
+        }
+    }
+}
+@media(max-width: 450px) {
+    .listing {
+        &__buttons {
+            flex-direction: column;
+        }
+        &__content-filter {
+            flex-direction: column;
+            gap: 30px 0;
+        }
+        &__content-reviews {
+            flex-direction: column;
+            gap: 30px 0;
+        }
+        &__form-box {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px 0;
+        }
+        &__hotel-info {
+            gap: 0 5px;
         }
     }
 }
